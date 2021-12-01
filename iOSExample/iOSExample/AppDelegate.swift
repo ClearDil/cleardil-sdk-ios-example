@@ -1,7 +1,4 @@
-import UIKit
-import Flutter
-import FlutterPluginRegistrant
-import cleardil_kyc_pod
+import cleardil_ios_sdk
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -11,7 +8,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Instantiate Flutter engine
-        self.kycModule = KycModuleBuilder().allowPassport().allowIdentityCard().allowDriverLicense().withSdkToken(sdkToken: "some-sdk-token").build()
+        self.kycModule = KycModuleBuilder().withEnvironment(env: KycModule.Environment.SANDBOX).allowPassport().allowIdentityCard().allowDriverLicense().withSdkToken(sdkToken: "some-sdk-token").build()
         return true
     }
 }
