@@ -8,7 +8,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Instantiate Flutter engine
-        self.kycModule = KycModuleBuilder().withEnvironment(env: KycModule.Environment.SANDBOX).allowPassport().allowIdentityCard().allowDriverLicense().withSdkToken(sdkToken: "some-sdk-token").build()
+        self.kycModule = KycModuleBuilder()
+            .withEnvironment(env: KycModule.Environment.DEMO)
+            .allowPassport()
+            .allowIdentityCard()
+            .allowDriverLicense()
+            .withSdkToken(sdkToken: "some-sdk-token")
+            .build()
         return true
     }
 }
