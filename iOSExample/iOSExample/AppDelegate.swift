@@ -10,6 +10,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Instantiate Flutter engine
         self.kycModule = KycModuleBuilder()
             .withEnvironment(env: KycModule.Environment.DEMO)
+            .withVerification()
             .allowPassport()
             .allowIdentityCard()
             .allowDriverLicense()
