@@ -1,11 +1,17 @@
 # Uncomment the next line to define a global platform for your project
 platform :ios, '9.0'
 
+source 'https://github.com/CocoaPods/Specs'
+
+plugin 'cocoapods-art', :sources => [
+  'cleardil-cocoapods-local'
+]
+
 target 'iOSExample' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-  
-pod 'cleardil_ios_sdk', :git => 'https://github.com/ClearDil/cleardil_ios_sdk.git', :tag => '1.1.0'
+
+  pod 'cleardil_ios_sdk', '1.2.2'
 
   target 'iOSExampleTests' do
     inherit! :search_paths
